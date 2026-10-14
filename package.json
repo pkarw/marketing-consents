@@ -1,0 +1,82 @@
+{
+  "name": "@piotrkarwatka/marketing-consents",
+  "version": "0.1.0",
+  "description": "Open Mercato module: marketing_consents",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "./dist/index.js",
+  "files": [
+    "src",
+    "dist",
+    "types",
+    "build.cjs",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./types/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./*.json": "./dist/*.json",
+    "./*.ts": {
+      "types": "./types/*.ts",
+      "default": "./dist/*.js"
+    },
+    "./*.tsx": {
+      "types": "./types/*.tsx",
+      "default": "./dist/*.js"
+    },
+    "./*": {
+      "types": [
+        "./types/*.ts",
+        "./types/*.tsx"
+      ],
+      "default": "./dist/*.js"
+    }
+  },
+  "scripts": {
+    "build": "node build.cjs",
+    "prepack": "npm run build"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "5.104.1",
+    "@tanstack/react-table": "9.2.6",
+    "zod": "4.4.3"
+  },
+  "peerDependencies": {
+    "@mikro-orm/decorators": "7.2.3",
+    "@mikro-orm/migrations": "7.2.3",
+    "@mikro-orm/postgresql": "7.2.3",
+    "@open-mercato/core": "0.9.0",
+    "@open-mercato/shared": "0.9.0",
+    "@open-mercato/ui": "0.9.0",
+    "next": "16.3.6",
+    "react": "19.2.8"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "@mikro-orm/decorators": "7.2.3",
+    "@mikro-orm/migrations": "7.2.3",
+    "@mikro-orm/postgresql": "7.2.3",
+    "@open-mercato/core": "0.9.0",
+    "@open-mercato/shared": "0.9.0",
+    "@open-mercato/ui": "0.9.0",
+    "next": "16.3.6",
+    "react": "19.2.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkarw/marketing-consents.git"
+  },
+  "mercatoModule": {
+    "id": "marketing_consents",
+    "formatVersion": 1
+  }
+}

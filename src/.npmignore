@@ -1,0 +1,8 @@
+**/__tests__/
+**/__integration__/
+**/__mocks__/
+**/*.test.*
+**/*.spec.*
+**/*.typecheck.*
+**/node_modules/
+**/.git/
