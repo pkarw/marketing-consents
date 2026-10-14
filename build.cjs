@@ -358,6 +358,13 @@ function build(packageDirectory) {
             const source = rewriteSource(fs.readFileSync(file, 'utf8'), file, sourceRoot, id);
             fs.writeFileSync(output, compile(source, file));
             fs.writeFileSync(typeOutput, source);
+            // Open Mercato discovers entity IDs/fields by parsing exported
+            // TypeScript classes in the resolved dist convention directory.
+            // Keep this source mirror beside the runtime JS; package exports
+            // still direct executable imports to the compiled file.
+            if (relative === path.join('data', 'entities.ts')) {
+                fs.writeFileSync(path.join(outputRoot, relative), source);
+            }
         }
         else {
             fs.copyFileSync(file, path.join(path.dirname(output), path.basename(file)));
