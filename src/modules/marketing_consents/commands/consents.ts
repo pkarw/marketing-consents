@@ -5,8 +5,8 @@ import { registerCommand } from "@open-mercato/shared/lib/commands";
 import type { TenantDataEncryptionService } from "@open-mercato/shared/lib/encryption/tenantDataEncryptionService";
 import { findOneWithDecryption } from "@open-mercato/shared/lib/encryption/find";
 import { enforceCommandOptimisticLock } from "@open-mercato/shared/lib/crud/optimistic-lock-command";
-import { ConsentRecord, WithdrawalEvidence } from "../data/entities.js";
-import { recordConsentSchema, withdrawConsentCommandSchema, type RecordConsentInput, type WithdrawConsentCommandInput, } from "../data/validators.js";
+import { ConsentRecord, WithdrawalEvidence } from "../data/entities";
+import { recordConsentSchema, withdrawConsentCommandSchema, type RecordConsentInput, type WithdrawConsentCommandInput, } from "../data/validators";
 const ENTITY_ID = 'marketing_consents:consent_record';
 export class ConsentCommandError extends Error {
     constructor(readonly status: 400 | 403 | 404 | 409 | 500, readonly code: 'invalid_input' | 'scope_required' | 'hash_mismatch' | 'idempotency_conflict' | 'not_found' | 'optimistic_lock_conflict' | 'withdrawal_evidence_missing' | 'encryption_unavailable') {

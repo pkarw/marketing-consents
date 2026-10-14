@@ -5,9 +5,9 @@ import { createRequestContainer } from "@open-mercato/shared/lib/di/container";
 import { runRouteMutationGuards } from "@open-mercato/shared/lib/crud/route-mutation-guard";
 import { resolveOrganizationScopeForRequest } from "@open-mercato/core/modules/directory/utils/organizationScope";
 import type { OpenApiMethodDoc, OpenApiRouteDoc } from "@open-mercato/shared/lib/openapi";
-import { ConsentCommandError, type WithdrawConsentCommandResult } from "../../../../commands/consents.js";
-import { withdrawConsentSchema } from "../../../../data/validators.js";
-import { marketingConsentsTag } from "../../../openapi.js";
+import { ConsentCommandError, type WithdrawConsentCommandResult } from "../../../../commands/consents";
+import { withdrawConsentSchema } from "../../../../data/validators";
+import { marketingConsentsTag } from "../../../openapi";
 const idSchema = z.string().uuid();
 const responseSchema = z.object({
     consentRecordId: z.string().uuid(),

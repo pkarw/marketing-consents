@@ -1,6 +1,6 @@
 import { isIP } from "node:net";
 import { z } from "zod";
-import { CONSENT_STATUSES } from "./entities.js";
+import { CONSENT_STATUSES } from "./entities";
 const optionalNameSchema = z.string().trim().max(200).nullable().optional();
 export const consentCodeSchema = z.string().regex(/^[a-z0-9][a-z0-9_.-]{0,99}$/);
 export const recordConsentSchema = z.object({

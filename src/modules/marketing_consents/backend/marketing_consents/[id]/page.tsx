@@ -1,5 +1,5 @@
 import { Page, PageBody } from "@open-mercato/ui/backend/Page";
-import ConsentDetail from "../../../components/ConsentDetail.js";
+import ConsentDetail from "../../../components/ConsentDetail";
 type Props = {
     params: Promise<{
         id: string;

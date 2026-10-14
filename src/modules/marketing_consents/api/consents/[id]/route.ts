@@ -4,8 +4,8 @@ import { createRequestContainer } from "@open-mercato/shared/lib/di/container";
 import { findOneWithDecryption } from "@open-mercato/shared/lib/encryption/find";
 import { resolveOrganizationScopeForRequest } from "@open-mercato/core/modules/directory/utils/organizationScope";
 import type { OpenApiMethodDoc, OpenApiRouteDoc } from "@open-mercato/shared/lib/openapi";
-import { ConsentRecord, WithdrawalEvidence } from "../../../data/entities.js";
-import { marketingConsentsTag } from "../../openapi.js";
+import { ConsentRecord, WithdrawalEvidence } from "../../../data/entities";
+import { marketingConsentsTag } from "../../openapi";
 const idSchema = z.string().uuid();
 const itemSchema = z.object({
     id: z.string().uuid(),

@@ -9,10 +9,10 @@ import { CrudHttpError } from "@open-mercato/shared/lib/crud/errors";
 import { findOneWithDecryption } from "@open-mercato/shared/lib/encryption/find";
 import { resolveOrganizationScopeForRequest } from "@open-mercato/core/modules/directory/utils/organizationScope";
 import type { OpenApiMethodDoc, OpenApiRouteDoc } from "@open-mercato/shared/lib/openapi";
-import { ConsentRecord } from "../../data/entities.js";
-import { consentListSchema, recordConsentSchema, type ConsentListQuery, type RecordConsentInput } from "../../data/validators.js";
-import { ConsentCommandError, type RecordConsentCommandResult } from "../../commands/consents.js";
-import { marketingConsentsTag } from "../openapi.js";
+import { ConsentRecord } from "../../data/entities";
+import { consentListSchema, recordConsentSchema, type ConsentListQuery, type RecordConsentInput } from "../../data/validators";
+import { ConsentCommandError, type RecordConsentCommandResult } from "../../commands/consents";
+import { marketingConsentsTag } from "../openapi";
 const ENTITY_ID = 'marketing_consents:consent_record';
 const logger = createLogger('marketing_consents').child({ component: 'api' });
 const listItemSchema = z.object({

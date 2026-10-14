@@ -1,5 +1,5 @@
 import { Page, PageBody } from "@open-mercato/ui/backend/Page";
-import ConsentsTable from "../../components/ConsentsTable.js";
+import ConsentsTable from "../../components/ConsentsTable";
 export default function MarketingConsentsPage() {
     return (<Page>
       <PageBody>
