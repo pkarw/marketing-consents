@@ -43,6 +43,10 @@ npx create-mercato-module install pkarw/marketing-consents
 
 Review the installation diff, then follow your application's normal database migration and setup process. Grant the appropriate permissions before opening `/backend/marketing_consents`.
 
+After installing or updating the module, run `yarn generate` and restart the development server so ORM metadata includes the new entities. The package includes a TypeScript entity source mirror in `dist` for the host's entity-ID and field discovery; executable imports continue to use compiled JavaScript.
+
+If a migrated app reports `relation "consent_records" does not exist`, compare it with the actual table name, `marketing_consent_records`. That error indicates unresolved ORM metadata and a guessed Query Engine table name; rerunning the same migration does not repair entity discovery.
+
 | Permission | Purpose |
 | --- | --- |
 | `marketing_consents.record` | Host backend records a proof. |

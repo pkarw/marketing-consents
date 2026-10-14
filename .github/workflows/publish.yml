@@ -38,6 +38,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_READ_TOKEN }}
       - name: Check release tag
         run: node -e 'const manifest = require("./package.json"); if (process.env.GITHUB_REF_TYPE === "tag" && process.env.GITHUB_REF_NAME !== "v" + manifest.version) throw new Error("Tag must match package.json version")'
+      - run: npm test
       - run: npm run build
       - name: Publish with npm Trusted Publishing
         run: |
